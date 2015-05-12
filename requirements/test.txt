@@ -1,0 +1,6 @@
+-r base.txt
+pysqlite
+nosexcover
+django-nose
+flake8
+bpython
