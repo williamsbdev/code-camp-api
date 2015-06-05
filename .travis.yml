@@ -2,6 +2,10 @@ language: python
 python:
   - "2.7"
 # command to install dependencies
-install: "pip install -r requirements.txt"
+install:
+  - pip install -r requirements/test.txt
+  - python manage.py test syncdb --noinput
+  - python manage.py test migrate --noinput
 # command to run tests
-script: "test test"
+script:
+  - python manage.py test test
