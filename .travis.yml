@@ -1,11 +1,16 @@
 language: python
 python:
-  - "2.7"
-# command to install dependencies
+- '2.7'
 install:
-  - pip install -r requirements/test.txt
-  - python manage.py test syncdb --noinput
-  - python manage.py test migrate --noinput
-# command to run tests
+- pip install -r requirements/test.txt
+- python manage.py test syncdb --noinput
+- python manage.py test migrate --noinput
 script:
-  - python manage.py test test
+- python manage.py test test
+deploy:
+  provider: heroku
+  api_key:
+    secure: DP50PXRnJQF52GQJy7S/XU7kBv7A+JyN8xL0h3aEMQRamt2P+2MRBxcHmZS/MIwj12raZCsC4AQdVXVvE0aByO+S1TulsVE9Sxu10U2c47nxvmnOr0ByS0+a3I8OFw/ctJtFnm9YOv8g5peEMh6YH3DjCxbCJtOAEtYhQTxtdtO+erxNddOueXjvvsydYnLitkboVAguwHJsbnf4O6JimL68m5hizLRknLE1/5FuE5NxSfE64i5Dj0o7JbvCINqA6X4CsqhRR/ow1RnGa6Ehem4Z12mvcGYJMsktbX01KCOM09oBswV0sJHLXoukORICI8cNdwnUma4aeTEy1T+cmrUOUMXqj769LrNPLCFPEaBZZfowIm/mQQzWYDK+SfXdp6bnGF8fpHh5pR3s64p0UoVBEVi2HcyeUo5zAOoOPabP85mwYv/dnxhVdZR1DQKgQC82k1oVe+11WLbadvnJtzIGtLETe98DXzt2TehwgCCdjm7sO31dp2ezGI44P7WAcF9fuGwH6dWXux2Tigz5j2tQw+C9NUqgiW3TocVB4klSH3nl51pO7wysECywM4A/pj+rPURL6iG7ikwlfJcCsXsPIww6WUR0joiyAIrRzIuBCCmnchdQfT1ArO2DudNL5HZ78Mlpdiin2xJ1VO8hrhhQgt7p/lhRmtdEPXvhPnY=
+  app: code-camp-api
+  on:
+    repo: williamsbdev/code-camp-api
