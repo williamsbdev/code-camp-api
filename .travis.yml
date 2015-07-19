@@ -7,6 +7,7 @@ install:
   - python manage.py test migrate --noinput
 script:
   - python manage.py test test
+  - ./security.sh
 deploy:
   provider: heroku
   api_key:
