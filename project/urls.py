@@ -4,9 +4,10 @@ from django.contrib import admin
 
 admin.autodiscover()
 
-urlpatterns = [
+urlpatterns = (
     url(r'^$', 'project.views.home', name='home'),
+    url(r'^/api', include('api.urls', namespace='api')),
     url(r'^admin/', include(admin.site.urls)),
     url('', include('django.contrib.auth.urls', namespace='auth')),
     url('', include('social.apps.django_app.urls', namespace='social')),
-]
+)
