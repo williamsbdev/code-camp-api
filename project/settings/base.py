@@ -13,8 +13,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'provider',
-    'provider.oauth2',
+    'oauth2_provider',
     'social.apps.django_app.default',
 )
 
