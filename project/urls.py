@@ -6,7 +6,8 @@ admin.autodiscover()
 
 urlpatterns = (
     url(r'^$', 'project.views.home', name='home'),
-    url(r'^/api', include('api.urls', namespace='api')),
+    url(r'^accounts/login/$', 'django.contrib.auth.views.login', {'template_name': 'registration/login.html'}),
+    url(r'^api/', include('api.urls', namespace='api')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
     url('', include('django.contrib.auth.urls', namespace='auth')),
